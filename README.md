@@ -47,6 +47,20 @@ Explanation of args:
 
 
 ```shell
+  1 qemu-system-x86_64 \
+  2         -kernel ./linux/arch/x86/boot/bzImage \
+  3         -serial mon:stdio \
+  4         -hda custom-deb11.qcow2 \
+  5         -net nic \
+  6         -net user,hostfwd=tcp::10022-:22 \
+  7         -smp 4 \
+  8         -m 16G \
+  9         -nographic \
+ 10         -append "root=/dev/sda1 rdinit=/sbin/init console=ttyS0 nokaslr" \
+ 11         -virtfs local,path=$PWD,mount_tag=host0,security_model=mapped,id=host0 \
+ 12         -s -S
+```
+```shell
 qemu-kvm \
   -kernel ./linux/arch/x86/boot/bzImage \
   -serial mon:stdio \

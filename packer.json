@@ -1,7 +1,6 @@
 {
   "builders": [
     {
-      "accelerator": "kvm",
       "boot_wait": "1s",
       "disk_image": true,
       "disk_size": "40000M",
@@ -70,8 +69,8 @@
   "variables": {
     "qemu_output_dir": "qemu-images",
     "qemu_output_name": "my-build.qcow2",
-    "qemu_source_checksum_url": "https://github.com/multani/packer-qemu-debian/releases/download/10.0.0-1/SHA256SUMS",
-    "qemu_source_iso": "https://github.com/multani/packer-qemu-debian/releases/download/10.0.0-1/debian-10.0.0-1.qcow2",
+    "qemu_source_checksum_url": "https://cloud.debian.org/images/cloud/bullseye/latest/SHA512SUMS",
+    "qemu_source_iso": "https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.qcow2",
     "qemu_ssh_password": "debian",
     "qemu_ssh_username": "debian",
     "home": "{{env `HOME`}}"
